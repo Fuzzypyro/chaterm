@@ -1,2 +1,2 @@
 # chaterm
-Chaterm is an AI-driven command line companion that effortlessly interprets natural language input, streamlining system administration tasks and revolutionizing the way you interact with your computer.
+An interactive AI-powered command line companion that bridges the gap between natural language and terminal commands. Seamlessly communicate with your computer using conversational input, while Chaterm efficiently translates your requests into executable commands. With built-in command bypass mode and intelligent chat mode, Chaterm offers a dynamic, user-friendly experience that streamlines system administration and enhances productivity. Say goodbye to memorizing complex syntax and welcome the future of command line interaction with Chaterm!
