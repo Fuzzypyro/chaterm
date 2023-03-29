@@ -1,7 +1,31 @@
+import sys
+import subprocess
+
+def check_and_install_module(module_name):
+    try:
+        __import__(module_name)
+    except ImportError:
+        print(f"The required module '{module_name}' is not installed.")
+        confirm = input(f"Do you want to install '{module_name}'? (y/n) ")
+        if confirm.lower() in ['', 'y', 'yes']:
+            try:
+                subprocess.check_call([sys.executable, "-m", "pip", "install", module_name])
+                print(f"Successfully installed '{module_name}'.")
+            except subprocess.CalledProcessError as e:
+                print(f"Error: Unable to install '{module_name}'.")
+                sys.exit(1)
+        else:
+            print(f"Please install '{module_name}' manually and try again.")
+            sys.exit(1)
+
+# Check and install required modules
+required_modules = ['openai']
+for module in required_modules:
+    check_and_install_module(module)
+
 import openai
 import json
 import os
-import subprocess
 from getpass import getpass
 
 def get_all_executables_in_path():
